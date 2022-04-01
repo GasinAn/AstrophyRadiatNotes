@@ -1,0 +1,68 @@
+\chapter{辐射场理论}
+
+\section{有源场: 电磁势---求解辐射场的经典方法}
+
+令$\partial^a A_a(t,\b{r}) = 0$, 得
+\begin{equation}
+    \partial^a \partial_a A_b(t,\b{r}) = -4\pi J_b(t,\b{r}).
+\end{equation}
+有解
+\begin{equation}
+    A^a(t,\b{r}) = \frac{1}{c} \int 
+    \frac{J^a(t-\frac{\left\lvert\b{r}-\b{r}'\right\rvert}{c},\b{r}')}
+    {\left\lvert\b{r}-\b{r}'\right\rvert}\,\d V'.
+\end{equation}
+
+对单粒子, $J^a(t,\b{r}) = q U^a(t) \delta(\b{r}-\b{r}_q(t))$, 所以
+\begin{align}
+    A^a(t,\b{r}) &= \frac{q}{c} \int 
+    \frac{U^a(t-\frac{\left\lvert\b{r}-\b{r}'\right\rvert}{c})
+    \delta(\b{r}'-\b{r}_q(t-\frac{\left\lvert\b{r}-\b{r}'\right\rvert}{c}))}
+    {\left\lvert\b{r}-\b{r}'\right\rvert}\,\d V'\\
+    &= \frac{q}{c} \int 
+    \frac{ \int
+    U^a(t')
+    \delta(\b{r}'-\b{r}_q(t'))
+    \delta(t'-(t-\frac{\left\lvert\b{r}-\b{r}'\right\rvert}{c}))\,\d t'
+    }
+    {\left\lvert\b{r}-\b{r}'\right\rvert}\,\d V'\\
+    &= \frac{q}{c} \iint 
+    \frac{
+    U^a(t')
+    \delta(t'-(t-\frac{\left\lvert\b{r}-\b{r}'\right\rvert}{c}))
+    }
+    {\left\lvert\b{r}-\b{r}'\right\rvert}
+    \delta(\b{r}'-\b{r}_q(t'))\,\d V'\,\d t'\\
+    &= \frac{q}{c} \int 
+    \frac{
+    U^a(t')
+    \delta(t'-(t-\frac{\left\lvert\b{r}-\b{r}_q(t')\right\rvert}{c}))
+    }
+    {\left\lvert\b{r}-\b{r}_q(t')\right\rvert}\,\d t',
+\end{align}
+上式是对$t'$进行的积分. 把积分变量变成$\tilde{t}'=t'-(t-\frac{\left\lvert\b{r}-\b{r}_q(t')\right\rvert}{c})$.
+注意到积分中$t$和$\b{r}$被当成常量, 所以$\d\tilde{t}'=\d t'+\frac{\dot{R}(t')}{c}\d t'=(1+\frac{\dot{R}(t')}{c})\d t'$,
+其中$R(t')=\left\lvert\b{r}-\b{r}_q(t')\right\rvert$, 所以$\dot{R}(t')=-\frac{(\b{r}-\b{r}_q(t'))}{\left\lvert\b{r}-\b{r}_q(t')\right\rvert}\cdot\dot{\b{r}}_q(t')=-\hat{\b{n}}(t')\cdot\b{u}_q(t')$.
+
+定义$K(t')=1+\frac{\dot{R}(t')}{c}=1-\frac{\hat{\b{n}}(t')\cdot\b{u}_q(t')}{c}=1-\frac{u_r(t')}{c}$,
+则$\d\tilde{t}'=K(t')\d t'$, 所以
+\begin{align}
+    A^a(t,\b{r})
+    &= \frac{q}{c} \int 
+    \frac{U^a(t')}
+    {K(t')\left\lvert\b{r}-\b{r}_q(t')\right\rvert}\delta(\tilde{t}')\,\tilde{t}',
+\end{align}
+其中$t'$是$\tilde{t}'$和$t$, $\b{r}$的函数. 令$\tilde{t}'=t'-(t-\frac{\left\lvert\b{r}-\b{r}_q(t')\right\rvert}{c})=0$,
+可得$R(t')=\left\lvert\b{r}-\b{r}_q(t')\right\rvert=c(t-t')$, 所以
+\begin{equation}
+    A^a(t,\b{r}) = \left[\frac{qU^a(t')}{cK(t')R(t')}\right]_{R(t')=c(t-t')}.
+\end{equation}
+$t$时刻$\b{r}$处接收到$t'$时刻$r_q(t')$处产生的辐射, 恰有$R(t')=c(t-t')$. 给定$t$和$\b{r}$, 满足$R(t')=\left\lvert\b{r}-\b{r}_q(t')\right\rvert=c(t-t')$的$t'$存在且唯一, 否则世界线不类时.
+
+\begin{IEEEeqnarray}{rCl}
+    \b{E} &=& q\left[\frac{(\hat{\b{n}}(t')-\b{\beta}(t'))(1-\b{\beta}(t')^2)}{K(t')^3R(t')^2}\right]_{R(t')=c(t-t')}\\
+    && \negmedspace{} +\frac{q}{c}\left[\frac{\hat{\b{n}}(t')\times((\hat{\b{n}}(t')-\b{\beta}(t'))\times\dot{\b{\beta}}(t'))}{K(t')^3R(t')}\right]_{R(t')=c(t-t')}
+\end{IEEEeqnarray}
+\begin{equation}
+    \b{B}=\left[\hat{\b{n}}\times\b{E}\right]_{R(t')=c(t-t')}
+\end{equation}
