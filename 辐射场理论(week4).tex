@@ -61,8 +61,25 @@ $t$时刻$\b{r}$处接收到$t'$时刻$r_q(t')$处产生的辐射, 恰有$R(t')=
 
 \begin{IEEEeqnarray}{rCl}
     \b{E} &=& q\left[\frac{(\hat{\b{n}}(t')-\b{\beta}(t'))(1-\b{\beta}(t')^2)}{K(t')^3R(t')^2}\right]_{R(t')=c(t-t')}\\
-    && \negmedspace{} +\frac{q}{c}\left[\frac{\hat{\b{n}}(t')\times((\hat{\b{n}}(t')-\b{\beta}(t'))\times\dot{\b{\beta}}(t'))}{K(t')^3R(t')}\right]_{R(t')=c(t-t')}
+    && \negmedspace{} +\frac{q}{c}\left[\frac{\hat{\b{n}}(t')\times((\hat{\b{n}}(t')-\b{\beta}(t'))\times\dot{\b{\beta}}(t'))}{K(t')^3R(t')}\right]_{R(t')=c(t-t')},
 \end{IEEEeqnarray}
 \begin{equation}
-    \b{B}=\left[\hat{\b{n}}\times\b{E}\right]_{R(t')=c(t-t')}
+    \b{B}=\left[\hat{\b{n}}\times\b{E}\right]_{R(t')=c(t-t')}.
+\end{equation}
+
+\begin{equation}
+    \frac{\d P(t)}{\d \Omega} = \frac{c}{4\pi} R(t')^2 \left\lvert\b{E}(t')\right\rvert^2.
+\end{equation}
+$\d P(t)$为因$t'$时刻电荷的辐射, 观者在$t$时刻测得的单位时间通过$R(t')^2\d\Omega$的辐射.
+求电荷处单位时间$\d\Omega$方向的能量$\d P(t')$. 能量守恒$\d P(t')\d t'=\d P(t)\d t$, $K(t')=\frac{\d t}{\d t'}$,
+\begin{equation}
+    \frac{\d P(t')}{\d \Omega} = \frac{c}{4\pi} K(t') R(t')^2 \left\lvert\b{E}(t')\right\rvert^2.
+\end{equation}
+
+非相对论, $K\simeq1$, $\hat{\b{n}}-\b{\beta}\simeq\hat{\b{n}}$,
+\begin{equation}
+    \b{E} = \frac{q}{cR}[\hat{\b{n}}\times(\hat{\b{n}}\times\dot{\b{\beta}})],
+\end{equation}
+\begin{equation}
+    \frac{\d P}{\d \Omega} = \frac{q^2}{4\pi c}\dot{\beta}^2\sin^2\Theta_{\dot{\b{\beta}},\hat{\b{n}}}.
 \end{equation}
