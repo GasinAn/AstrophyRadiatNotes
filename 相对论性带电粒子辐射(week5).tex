@@ -1,0 +1,33 @@
+\chapter{相对论性带电粒子辐射}
+
+\begin{equation}
+    \frac{\d P(t')}{\d \Omega} = \frac{c}{4\pi} K(t') R(t')^2 \left\lvert\b{E}(t')\right\rvert^2,
+\end{equation}
+\begin{equation}
+    \b{E} =\frac{q}{c}\frac{\hat{\b{n}}(t')\times((\hat{\b{n}}(t')-\b{\beta}(t'))\times\dot{\b{\beta}}(t'))}{K(t')^3R(t')},
+\end{equation}
+\begin{equation}
+    K(t')=1-\hat{\b{n}}(t')\cdot\b{\beta}(t').
+\end{equation}
+
+若$\hat{\b{n}}/\!/\b{\beta}$, 则$K\to0$, $\frac{\d P}{\d \Omega}\to\infty$, 速度方向极大.
+
+$K=2K_\text{min}\to\theta\simeq\frac{1}{\gamma}:=\sqrt{1-\b{\beta}^2}$\footnote{此处$\theta$是观者系中粒子运动方向和观者方向的夹角.}.
+
+粒子静系中$\theta=\frac{\pi}{2}$出射的光子\footnote{此处$\theta$是粒子静系中光子出射方向和粒子运动方向的夹角.}, 观者看来$\theta\simeq\frac{1}{\gamma}$.
+
+$\b{\beta}/\!/\dot{\b{\beta}}$,
+\begin{equation}
+    \frac{\d P}{\d \Omega} = \frac{q^2}{4\pi c} \frac{\dot{\b{\beta}}^2\sin^2\theta}{(1-\left\lvert\b{\beta}\right\rvert\cos\theta)^5},
+\end{equation}
+$\theta_\text{max}=\arccos\frac{\sqrt{15\left\lvert\b{\beta}\right\rvert^2+1}-1}{3\left\lvert\b{\beta}\right\rvert}$\footnote{我算的, 不知对不对.}.
+
+$\b{\beta}\bot\dot{\b{\beta}}$,
+\begin{equation}
+    \frac{\d P}{\d \Omega} = \frac{q^2}{4\pi c}\dot{\b{\beta}}^2
+    \left[
+        \frac{\gamma^2(1-\left\lvert\b{\beta}\right\rvert\cos\theta)^2
+        -\sin^2\theta\cos^2\phi}{\gamma^2(1-\left\lvert\b{\beta}\right\rvert\cos\theta)^5}
+    \right],
+\end{equation}
+其中$\phi$坐标系为: 以$\dot{\b{\beta}}$方向为$x$轴正向, 以$\b{\beta}$方向为$z$轴正向.
