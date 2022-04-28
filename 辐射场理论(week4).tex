@@ -83,3 +83,35 @@ $\d P(t)$为因$t'$时刻电荷的辐射, 观者在$t$时刻测得的单位时�
 \begin{equation}
     \frac{\d P}{\d \Omega} = \frac{q^2}{4\pi c}\dot{\beta}^2\sin^2\Theta_{\dot{\b{\beta}},\hat{\b{n}}}.
 \end{equation}
+
+\section{辐射谱: 电磁场能量在不同频率的分布}
+
+\begin{equation}
+    E(t)=\int E(\omega)e^{-i\omega t}\d\omega,
+\end{equation}
+\begin{equation}
+    E(\omega)=\frac{1}{2\pi}\int E(t)e^{i\omega t}\d t.
+\end{equation}
+
+对$\frac{\d P(t)}{\d \Omega}$作Fourier分析(警告: 不是$\frac{\d P(t')}{\d \Omega}$, 因为观者测得频谱). 假定$R\simeq\text{const}$, 由Parseval定理,
+\begin{equation}
+    \frac{\d W}{\d\Omega\d\omega}=cR^2\left\lvert\b{E}(\omega)\right\rvert^2.
+\end{equation}
+\begin{equation}
+    \b{E}(\omega)=\frac{1}{2\pi}\int \b{E}(t')e^{i\omega t}\d t,
+\end{equation}
+由$t'=t-\frac{R(t')}{c}$, $\frac{\d t}{\d t'}=K(t')$,
+\begin{equation}
+    \b{E}(\omega)=\frac{1}{2\pi}\int K(t')\b{E}(t')e^{i\omega \left[t'+\frac{R(t')}{c}\right]}\d t',
+\end{equation}
+$R(t')=\left\lvert\b{r}-\b{r}_q(t')\right\rvert\simeq\left\lvert\b{r}\right\rvert-\frac{\b{r}}{\left\lvert\b{r}\right\rvert}\cdot\b{r}_q(t')=\left\lvert\b{r}\right\rvert-\hat{\b{n}}\cdot\b{r}_q(t')$, 得
+\begin{equation}
+    \left\lvert\b{E}(\omega)\right\rvert^2=
+    \left\lvert\frac{1}{2\pi}\int K(t')\b{E}(t')e^{i\omega \left[t'-\frac{\hat{\b{n}}\cdot\b{r}_q(t')}{c}\right]}\d t'\right\rvert^2.
+\end{equation}
+非相对论,
+\begin{equation}
+    \frac{\d W}{\d\Omega\d\omega}
+    =\frac{\omega^4q^2\left\lvert{\b{r}}_q\right\rvert(\omega)^2\sin^2
+    \Theta_{\ddot{\b{r}}_q,\hat{\b{n}}}}{c^3}.
+\end{equation}
