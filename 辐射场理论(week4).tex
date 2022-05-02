@@ -1,5 +1,52 @@
 \chapter{辐射场理论}
 
+\section{辐射场的偏振与Stokes参量}
+
+椭圆偏振,
+\begin{align}
+    \b{E}_1(t)=E_1\b{e}_x\cos(\omega t-\varphi_1),\\
+    \b{E}_2(t)=E_2\b{e}_y\cos(\omega t-\varphi_2).
+\end{align}
+Stokes参量:
+\begin{equation}
+    \begin{cases}
+        I=E_1^2+E_2^2,\\
+        Q=E_1^2-E_2^2,\\
+        U=2E_1E_2\cos(\varphi_2-\varphi_1),\\
+        V=2E_1E_2\sin(\varphi_2-\varphi_1).
+    \end{cases}
+\end{equation}
+实际,
+\begin{align}
+    \b{E}(t)&=E_x(t)\b{e}_x+E_y(t)\b{e}_y\\
+    &=\int \{E_x(\omega)\cos[\omega t-\varphi_x(\omega)]\b{e}_x+E_y(\omega)\cos[\omega t-\varphi_y(\omega)]\b{e}_y\}\,\d\omega,
+\end{align}
+给$y$方向附加一相移$\eta$,
+\begin{equation}
+    \b{E}(t)=\int \{E_x(\omega)\cos[\omega t-\varphi_x(\omega)]\b{e}_x+E_y(\omega)\cos[\omega t-\varphi_y(\omega)+\eta]\b{e}_y\}\,\d\omega,
+\end{equation}
+在$(\sin\psi,\cos\psi)$上的投影为
+\begin{align}
+    &\int \{E_x(\omega)\cos[\omega t-\varphi_x(\omega)]\sin\psi+E_y(\omega)\cos[\omega t-\varphi_y(\omega)+\eta]\cos\psi\}\,\d\omega\\
+    =&\sum_{\text{func}=\cos,\sin}\int \left\{E_x(\omega)\,\text{func}\,\varphi_x(\omega)\sin\psi+E_y(\omega)\,\text{func}\,[\varphi_y(\omega)-\eta]\cos\psi\right\}\,\text{func}\,\omega t\,\d\omega,
+\end{align}
+平方平均, 得
+\begin{align}
+    &\sum_{\text{func}=\cos,\sin}\int \left\{E_x(\omega)\,\text{func}\,\varphi_x(\omega)\sin\psi+E_y(\omega)\,\text{func}\,[\varphi_y(\omega)-\eta]\cos\psi\right\}^2\,\d\omega,\\
+    =&\left\{\int E_x(\omega)^2\,\d\omega\right\}\sin^2\psi+\left\{\int E_y(\omega)^2\,\d\omega\right\}\cos^2\psi\nonumber\\
+    &+2\left\{\int E_x(\omega)E_y(\omega)\cos[\varphi_x(\omega)-\varphi_y(\omega)+\eta]\,\d\omega\right\}\sin\psi\cos\psi\nonumber\\
+    =&\frac{1}{2}[I+Q\cos2\psi+(U\cos\eta+V\sin\eta)\sin2\psi],
+\end{align}
+\begin{equation}
+    \begin{cases}
+        I=\int E_x(\omega)^2\,\d\omega+\int E_y(\omega)^2\,\d\omega,\\
+        Q=\int E_x(\omega)^2\,\d\omega-\int E_y(\omega)^2\,\d\omega,\\
+        U=2\int E_x(\omega)E_y(\omega)\cos[\varphi_y(\omega)-\varphi_x(\omega)]\,\d\omega,\\
+        V=2\int E_x(\omega)E_y(\omega)\sin[\varphi_y(\omega)-\varphi_x(\omega)]\,\d\omega.
+    \end{cases}
+\end{equation}
+Stokes参量依赖于坐标系.
+
 \section{有源场: 电磁势---求解辐射场的经典方法}
 
 令$\partial^a A_a(t,\b{r}) = 0$, 得
