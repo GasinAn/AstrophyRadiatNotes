@@ -1,0 +1,84 @@
+\chapter{同步辐射}
+
+\section{回旋辐射}
+
+$v_\parallel=v\cos\alpha$, $v\perp=v\sin\alpha$, $\alpha$称为投射角.
+
+非相对论,
+\begin{equation}
+    P=\frac{2e^2\dot{v}^2}{3c}.
+\end{equation}
+又有$m_e\dot{\b{v}}=-\frac{e}{c}(\b{v}\times\b{B})$, 所以
+\begin{equation}
+    P=\frac{2}{3}\frac{e^4}{m_e^2c^5}v^2B^2\sin^2\alpha.
+\end{equation}
+电子经典半径为$r_e=\frac{e^2}{m_ec^2}$\footnote{令$m_ec^2=\frac{e^2}{r_e}$.}, 则
+\begin{equation}
+    P=\frac{2}{3c}r_e^2v^2B^2\sin^2\alpha=\frac{2r_e^2c}{3}\beta^2B^2\sin^2\alpha.
+\end{equation}
+假设电子分布各项同性, 则平均总功率
+\begin{align}
+    \bar{P}&=\frac{2r_e^2c}{3}\beta^2B^2\frac{\iint\sin^2\alpha\sin\alpha\,\d\alpha\,\d\phi}{4\pi}\\
+    &=\frac{2r_e^2c}{3}\beta^2B^2\frac{\int\sin^3\alpha\,\d\alpha}{2}\\
+    &=\frac{2r_e^2c}{3}\beta^2B^2\frac{2}{3}\\
+    &=\frac{4}{9}r_e^2c\beta^2B^2.
+\end{align}
+$P$和$\bar{P}$正比于电子动能($\beta^2$)和磁场能量密度($B^2$).
+
+周期运动,
+\begin{equation}
+    E(t)=\sum_{-\infty}^{\infty} E_se^{-is\omega_0 t},
+\end{equation}
+\begin{equation}
+    E_s=\frac{1}{T}\int_0^T E(t)e^{is\omega_0 t}\d t.
+\end{equation}
+
+对$\frac{\d W}{\d \Omega}:=\int_0^T\frac{\d P(t)}{\d \Omega}\,\d t$作Fourier分析. 一样假定$R\simeq\text{const}$, 由Parseval定理,
+\begin{equation}
+    \frac{\d\bar{P}_s}{\d\Omega}:=\frac{1}{T}\frac{\d W_s}{\d\Omega}=\frac{c}{2\pi}R^2
+    \left\lvert\b{E}_s\right\rvert^2.
+\end{equation}
+\begin{equation}
+    \b{E}_s=\frac{1}{T}\int_0^T \b{E}(t')e^{is\omega_0 t}\d t.
+\end{equation}
+由$t'=t-\frac{R(t')}{c}$, $\frac{\d t}{\d t'}=K(t')$,
+\begin{equation}
+    \b{E}_s=\frac{1}{T}\int K(t')\b{E}(t')e^{i\omega \left[t'+\frac{R(t')}{c}\right]}\d t',
+\end{equation}
+$R(t')=\left\lvert\b{r}-\b{r}_q(t')\right\rvert\simeq\left\lvert\b{r}\right\rvert-\frac{\b{r}}{\left\lvert\b{r}\right\rvert}\cdot\b{r}_q(t')=\left\lvert\b{r}\right\rvert-\hat{\b{n}}\cdot\b{r}_q(t')$, 得
+\begin{equation}
+    \left\lvert\b{E}_s\right\rvert^2=\left\lvert\frac{1}{T}\int K(t')\b{E}(t')e^{i\omega \left[t'-\frac{\hat{\b{n}}\cdot\b{r}_q(t')}{c}\right]}\d t'\right\rvert^2,
+\end{equation}
+非相对论,
+\begin{equation}
+    \frac{\d\bar{P}_s}{\d\Omega}
+    =\frac{q^2\left\lvert{\ddot{\b{r}}}_q\right\rvert_s^2\sin^2
+    \Theta_{\ddot{\b{r}}_q,\hat{\b{n}}}}{2\pi c^3}
+    =\frac{s^4\omega_0^4q^2\left\lvert{\b{r}}_q\right\rvert_s^2\sin^2
+    \Theta_{\ddot{\b{r}}_q,\hat{\b{n}}}}{2\pi c^3}.
+\end{equation}
+
+偶极子: $x$轴和$y$轴$\b{E}$沿$z$轴, $z$轴$\b{E}=\b{0}$.
+
+由对称性, 可令电子在$xOy$面内, 观者在$xOz$面内, 然后可得($\nu_0=\frac{\omega_0}{2\pi}$, $\omega_0=\frac{1}{\gamma}\omega_L=\frac{1}{\gamma}\frac{eB}{m_ec}$)
+\begin{equation}
+    \frac{\d\bar{P}_s}{\d\Omega}
+    =\frac{2\pi e^2s^2\nu_0^2}{c}
+    \left[\cot^2\theta J_s(s\beta\sin\theta)^2+\beta^2J_s'(s\beta\sin\theta)^2\right],
+\end{equation}
+其中Bessel函数
+\begin{equation}
+    J_s(x):=\frac{1}{2\pi}\int_0^{2\pi}e^{i(su-x\sin u)}\d u.
+\end{equation}
+积分得
+\begin{equation}
+    \bar{P}_s
+    =\frac{8\pi^2e^2s^2\gamma^{-2}\nu_L^2}{c\beta}
+    \left[s\beta^2J_{2s}'(2s\beta)-s^2\gamma^{-2}\int_0^\beta J_{2s}(2su)\d u\right],
+\end{equation}
+非相对论, $\beta\ll1$, $s\beta\ll1$, 展开得
+\begin{equation}
+    \bar{P}_s\simeq\left(\frac{8\pi^2e^2\nu_L^2}{c}\right)
+    \frac{(s+1)s^{2s+1}}{(2s+1)!}\beta^{2s}.
+\end{equation}
+可见$\bar{P}_{s+1}/\bar{P}_s\sim\beta^2\ll1$.
