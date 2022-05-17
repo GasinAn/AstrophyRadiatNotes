@@ -1,6 +1,6 @@
 \chapter{同步辐射}
 
-\section{回旋辐射}
+\section{回旋辐射}\label{cyclotron}
 
 $v_\parallel=v\cos\alpha$, $v\perp=v\sin\alpha$, $\alpha$称为投射角.
 
@@ -82,3 +82,56 @@ $R(t')=\left\lvert\b{r}-\b{r}_q(t')\right\rvert\simeq\left\lvert\b{r}\right\rver
     \frac{(s+1)s^{2s+1}}{(2s+1)!}\beta^{2s}.
 \end{equation}
 可见$\bar{P}_{s+1}/\bar{P}_s\sim\beta^2\ll1$.
+
+\section{同步辐射}
+
+同样回旋运动, 令$m_e\to\gamma m_e$, 得$\omega_0=\frac{1}{\gamma}\omega_L=\frac{eB}{\gamma m_ec}$, 回旋半径非常大, 接近直线运动.
+\begin{equation}
+    P=\frac{2e^2\gamma^4\dot{v}^2}{3c}.
+\end{equation}
+\begin{equation}
+    P=\frac{2r_e^2c}{3}\gamma^2\beta^2B^2\sin^2\alpha.
+\end{equation}
+\begin{equation}
+    \bar{P}=\frac{4}{9}r_e^2c\gamma^2\beta^2B^2.
+\end{equation}
+冷却时间$t_\text{cool}:=\gamma m_ec^2/\bar{P}$.
+
+仍然有第\ref{w5}章的$\frac{\d P}{\d\Omega}$和\ref{cyclotron}节的
+\begin{equation}
+    \frac{\d\bar{P}_s}{\d\Omega}
+    =\frac{2\pi e^2s^2\nu_0^2}{c}
+    \left[\cot^2\theta J_s(s\beta\sin\theta)^2+\beta^2J_s'(s\beta\sin\theta)^2\right],
+\end{equation}
+\begin{equation}
+    \bar{P}_s
+    =\frac{8\pi^2e^2s^2\nu_0^2}{c\beta}
+    \left[s\beta^2J_{2s}'(2s\beta)-s^2\gamma^{-2}\int_0^\beta J_{2s}(2su)\d u\right].
+\end{equation}
+因为$\Delta\nu_0/\nu_0\ll1$, 已成连续谱.
+
+直接求连续谱. $\omega_c:=\frac{3}{2}\gamma^2\omega_L\sin\alpha$, 最大值$\omega\approx0.29\omega_c$, 低频$\propto\omega^{1/3}$, 高频指数下降, 用$\ln\omega$画图可见高频截断.
+
+\section{幂律分布电子的集体辐射}
+
+常认为电子能量分布是幂律的, 即
+\begin{equation}
+    N(\gamma)=C\gamma^{-p},\quad\gamma\in[1,\infty),
+\end{equation}
+则
+\begin{equation}
+    P_\text{tot}(\omega)=C\int_{\gamma_1}^{\gamma_2}P(\omega)\gamma^{-p}\,\d\gamma\propto\int_{\gamma_1}^{\gamma_2}F\left(\frac{\omega}{\omega_c}\right)\gamma^{-p}\,\d\gamma.
+\end{equation}
+把积分变量变成$x:=\omega/\omega_c$, 由$\omega_c\propto\gamma^2$得
+\begin{equation}
+    P_\text{tot}(\omega)\propto\omega^{-(p-1)/2}\int_{x_1}^{x_2}F\left(x\right)x^{(p-3)/2}\,\d x\propto\omega^{-s},
+\end{equation}
+其中$s:=(p-1)/2$.
+
+\section{同步自吸收}
+
+$\alpha(\omega)\propto\omega^{-(p+4)/2}$, $S(\omega)=\frac{j(\omega)}{\alpha(\omega)}=\frac{P_\text{tot}(\omega)}{4\pi}\alpha(\omega)\propto\omega^{5/2}$. 低频$\alpha$大, 光学厚, $I(\omega)\approx S(\omega)\propto\omega^{5/2}$, 高频$I(\omega)\propto\omega^{-s}$, 分界点$\tau(\omega)=1$.
+
+\section{曲率辐射}
+
+因为运动类似, 所以单粒子谱型一样. 但$\omega_0\simeq\frac{c}{\rho}$ (其中$\rho$为曲率半径), 所以$\omega_c\propto\gamma^3$, 低频端$P(\omega)\propto\omega^{1/3}$与$\gamma$无关, 所以$P_\text{tot}(\omega)\propto P(\omega)\propto\omega^{1/3}$.
