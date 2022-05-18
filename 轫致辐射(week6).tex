@@ -1,0 +1,48 @@
+\chapter{轫致辐射}
+
+准备量子改正.
+
+\section{轫致辐射谱分布}
+
+$t=-\infty$速度$v$, 碰撞距离(最小距离) $b$. 靠近时加速度大, 有辐射, 碰撞时间$\tau\simeq\frac{b}{v}$, Fourier变换得$\omega\tau\lesssim1$时有辐射. 令距离为$b$时$t=0$.
+\begin{equation}
+    \frac{\d W}{\d\omega}=\frac{8\pi}{3c^3}\ddot{d}(\omega)^2=\frac{8\pi}{3c^3}\left\lvert\frac{1}{2\pi}\int e\dot{v}(t)e^{i\omega t}\d t\right\rvert^2.
+\end{equation}
+$\omega\tau\gg 1$, $e^{i\omega t}$振荡, $\omega\tau\ll 1$, $e^{i\omega t}\simeq1$, 
+\begin{equation}
+    \ddot{\b{d}}(\omega)=\begin{cases}
+        -\frac{e}{2\pi}\Delta\b{v}&\omega\tau\ll1,\\
+        0&\omega\tau\gg1.
+    \end{cases}
+\end{equation}
+\begin{equation}
+    \Delta v=\int a_\perp \d t=-\int \frac{Ze^2}{m_e(v^2t^2+b^2)}\frac{b}{(v^2t^2+b^2)^{1/2}} \d t=-\frac{2Ze^2}{mbv}.
+\end{equation}
+\begin{equation}
+    \frac{\d W}{\d\omega}=\begin{cases}
+        \frac{8Z^2e^6}{3\pi c^3m_e^2v^2b^2}&\omega\ll v/b,\\
+        0&\omega\gg v/b.
+    \end{cases}
+\end{equation}
+
+电子数密度$n_e$, 离子数密度$n_i$. $\Delta t$时间, 流过离子旁距离$b$, 宽$\Delta b$的环内的电子数为$\Delta N_e=n_e(2\pi b\Delta b)(v\Delta t)$, 每个电子$\Delta\omega$内辐射$\Delta W=\frac{\d W}{\d\omega}\Delta\omega$. 则
+\begin{equation}
+    \frac{\d P}{\d \omega}=\int 2\pi n_e bv\frac{\d W}{\d\omega}\d b.
+\end{equation}
+\begin{equation}
+    \frac{\d P}{\d V\d \omega}=n_i\int_{b_\text{min}}^{b_\text{max}} 2\pi n_e bv\frac{\d W}{\d\omega}\d b=\frac{16n_en_iZ^2e^6}{3c^3m_e^2v^2b^2}\ln\left(\frac{b_\text{max}}{b_\text{min}}\right).
+\end{equation}
+$b_\text{max}\simeq\frac{v}{\omega}$. 电子被做功$W\simeq\frac{Ze^2}{b^2}b\leqslant\frac{m_ev^2}{2}$, 得$b_\text{min}\simeq\frac{Ze^2}{m_ev^2}$, 测不准原理, 得$b_\text{min}\simeq\frac{h}{m_ev}$, 所以$b_\text{min}\simeq\max\left(\frac{Ze^2}{m_ev^2},\frac{h}{m_ev}\right)$. 粒子速度大, $\frac{h}{m_ev}\gg\frac{Ze^2}{m_ev^2}$, 需用量子理论, 但低频$\frac{h\omega}{2\pi}\ll\frac{\gamma m_ev^2}{2}$, 所以能用经典结果. 最后瞎蒙乱猜
+\begin{equation}
+    g_\text{ff}(\omega;v)=\frac{\sqrt{3}}{\pi}\ln\left(\frac{b_\text{max}}{b_\text{min}}\right),
+\end{equation}
+得
+\begin{equation}
+    \frac{\d P}{\d V\d \omega}=\frac{16\pi n_en_iZ^2e^6}{3\sqrt{3}c^3m_e^2v^2b^2}g_\text{ff}(\omega;v).
+\end{equation}
+
+热平衡, Maxwell分布, $h\nu_\text{max}\lesssim\frac{1}{2}m_ev^2$,
+\begin{equation}
+    \epsilon_\text{ff}(\nu)=\frac{\d P}{\d V\d \omega}\propto Z^2n_en_iT^{-1/2}e^{-h\nu/kT}\bar{g}_\text{ff}(\nu).
+\end{equation}
+$h\nu/kT\ll1$, 平谱, $h\nu/kT\gtrsim1$, 截断.
