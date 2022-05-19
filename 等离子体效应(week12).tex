@@ -1,0 +1,88 @@
+\chapter{等离子体效应}
+
+\section{各向同性冷等离子体中的色散关系}
+
+无外磁场, 各向同性.
+
+冷等离子体: 只考虑辐射在等离子体中的传播, 忽略等离子体的辐射和吸收.
+
+设$\b{E}=E\exp[-i(\omega t-\b{k}\cdot\b{r})]\b{e}$, 代入Maxwell方程,
+\begin{equation}
+    \begin{cases}
+        i\b{k}\cdot\b{E}=4\pi\rho,\\
+        i\b{k}\cdot\b{B}=0,\\
+        i\b{k}\times\b{E}=i\frac{\omega}{c}\b{B},\\
+        i\b{k}\times\b{B}=\frac{4\pi}{c}\b{j}-i\frac{\omega}{c}\b{E}.
+    \end{cases}
+\end{equation}
+只认为电子有电流.
+\begin{equation}
+    m_e\dot{\b{v}}_e=-e\b{E}
+\end{equation}
+忽略等离子体导致的$\b{E}$的变化, 代入$\b{E}=E\exp[-i(\omega t-\b{k}\cdot\b{r})]\b{e}$,
+\begin{equation}
+    \b{v}=\frac{e\b{E}}{i\omega m_e}.
+\end{equation}
+用Ohm定律,
+\begin{equation}
+    \b{j}=-n_ee\b{v}=\sigma\b{E},
+\end{equation}
+并定义
+\begin{equation}
+    \epsilon:=1-\frac{4\pi\sigma}{i\omega}=1-\frac{4\pi n_ee^2}{\omega^2m_e}:=1-\left(\frac{\omega_p}{\omega}\right)^2,
+\end{equation}
+得
+\begin{equation}
+    \begin{cases}
+        i\b{k}\cdot(\epsilon\b{E})=0,\\
+        i\b{k}\cdot\b{B}=0,\\
+        i\b{k}\times(\epsilon\b{E})=i\frac{\omega}{c}\b{B},\\
+        i\b{k}\times\b{B}=-i\frac{\omega}{c}(\epsilon\b{E}),
+    \end{cases}
+\end{equation}
+一不小心就玩出了个``真空场方程'', 发现
+\begin{equation}
+    c^2k^2=\epsilon\omega^2=\omega^2-\omega_p^2.
+\end{equation}
+
+若$\omega<\omega_p$, $k$为虚数, $\b{E}=E\exp[-i(\omega t-\b{k}\cdot\b{r})]\b{e}$变成指数衰减, 所以$\omega_p$为截止频率.
+
+若$\omega>\omega_p$, 相速度
+\begin{equation}
+    v_\text{ph}=\frac{\omega}{k}=\frac{c}{\sqrt{\epsilon}}=\frac{c}{\sqrt{1-\left(\frac{\omega_p}{\omega}\right)}}:=\frac{c}{n_\text{r}}>c.
+\end{equation}
+群速度
+\begin{equation}
+    v_\text{g}=\frac{\partial\omega}{\partial k}=c\sqrt{1-\left(\frac{\omega_p}{\omega}\right)}<c.
+\end{equation}
+可测柱密度.
+
+\section{光线在有大尺度磁场的冷等离子体中的传播}
+
+大磁场$\b{B}_0$. 设沿$\b{B}_0$方向入射, $\b{E}=Ee^{-i\omega t}(\b{e}_1\mp i\b{e}_2)$, $\b{B}_0=B_0\b{e}_3$,
+\begin{equation}
+    \omega_B:=\frac{eB_0}{m_ec}
+\end{equation}
+\begin{equation}
+    \epsilon_\text{R,L}:=1-\frac{\omega_p^2}{\omega(\omega\pm\omega_B)},
+\end{equation}
+则
+\begin{equation}
+    v_\text{ph}=\frac{c}{\epsilon_\text{R,L}}.
+\end{equation}
+群速度
+\begin{equation}
+    v_\text{g}=\frac{\partial\omega}{\partial k}.
+\end{equation}
+有Faraday旋转.
+
+\section{高能辐射过程中的等离子体效应}
+
+\subsection{Cherenkov辐射}
+按上面方法各种替换, 公式中出现$n_\text{r}:=\sqrt{\epsilon}$, 若$n_\text{r}>1$, 则$K$可等于$0$, $\b{A}$可等于$\infty$, ``固有场''可能无穷远积分不为$0$, 所以匀速也可有辐射.
+
+若粒子$v>v_\text{ph}=c/n_\text{r}$, 则有Cherenkov锥.
+
+\subsection{Razin效应}
+
+$k=1-n_\text{r}\beta\cos\theta$, 得辐射锥角$\theta=(1-n_\text{r}^2\beta^2)^{1/2}$. 若$n_\text{r}\ll1$, $\beta\simeq1$, $\theta\simeq(1-n_\text{r}^2)^{1/2}=\frac{\omega_p}{\omega}$, 若$\omega\lesssim\gamma\omega_p$, 则无$\theta\simeq1/\gamma$, 所以截止频率$\gamma\omega_p$非$\omega_p$.
