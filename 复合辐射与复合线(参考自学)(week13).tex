@@ -1,0 +1,107 @@
+\chapter[复合辐射与复合线(参考自学)]{复合辐射与复合线}
+\begin{enumerate}
+    \item 何为复合辐射? 它与轫致辐射有何异同? 在温度为$10000\,\text{K}$时, 复合辐射主要产生哪种波段的辐射?\da{
+        复合过程产生的辐射. 自由--束缚而非自由--自由. 光学(轫致射电).
+    }
+    \item 氢离子复合辐射的截面与主量子数$n$有何关系? 若温度为$10000\,\text{K}$, 复合截面的量级大约是多少? 它比氢原子的几何截面大还是小?\da{
+        \begin{align}
+            \frac{\Delta \sigma_\text{R}}{\Delta n}
+            &=\left(\frac{32\pi}{3\sqrt{3}}\right)Z^2\left(\frac{e^2}{\hbar c}\right)^3\left(\frac{\hbar}{m_e v_\text{初}}\right)^2\left(\frac{Z^2\frac{2\pi^2e^4m_e}{(4\pi\epsilon_0)^2h^2}}{h\nu_\text{出}}\right)\frac{g_\text{R}(n)}{n^3}\\
+            &=\left(\frac{32\pi}{3\sqrt{3}}\right)Z^2\alpha_\text{EM}^3\left(\frac{\lambda_e}{2\pi}\right)^2\left(\frac{Z^2E_1}{h\nu_\text{出}}\right)\frac{g_\text{R}(n)}{n^3},
+        \end{align}
+        大$n$, $\frac{\Delta \sigma_\text{R}}{\Delta n}\propto n^{-3}$, 小$n$, $h\nu\simeq\frac{Z^2E_1}{n^2}$, $\frac{\Delta \sigma_\text{R}}{\Delta n}\propto n^{-1}$, 临界值$kT\simeq E_\text{初}\simeq\frac{Z^2E_1}{n_\text{max}^2}$. $\frac{\Delta \sigma_\text{R}}{\Delta n}\sim10^{-20}\text{cm}^2$. $5\!\times\!10^3\text{--}2\!\times\!10^4\,\text{K}$ 远小于氢原子截面($\sim10^{-15}\text{cm}^2$).
+    }
+    \item 复合速率系数($\alpha$)的定义是什么? 在低温和高温近似下, 复合速率系数与温度的关系大约是什么?\da{
+        \begin{equation}
+            -\frac{\d N_e}{\d t}=-\frac{\d N_Z}{\d t}:=\alpha N_eN_Z,
+        \end{equation}
+        设电子有Maxwell分布$f(v)$, 则
+        \begin{equation}
+            \alpha(T)=\sum_n\int\sigma_\text{R}(n)vf(v)\,\d v:=\sum_n\alpha_n(T).
+        \end{equation}
+    }低温$\alpha(T)\propto T^{-1/2}$, 高温$\alpha(T)\propto T^{-3/2}$.
+    \item 复合辐射连续谱和轫致辐射的谱发射系数的比值如何近似表示? 在何种情况下复合辐射比轫致辐射占优势? 在何种情况下复合辐射不重要?\da{
+        $\frac{j_\text{复合}(\nu)}{j_\text{轫致}(\nu)}\simeq10^{-1}\frac{X(\nu,T)}{T/10^6\text{K}}$, 由于$X$值随频率$\nu$值的增大而增加, 复合辐射连续谱在高频端可能超过轫致辐射, 而在低频端轫致辐射占优势.
+        当波长小于$\sim\frac{30}{T/10^6\text{K}}\text{\AA}$时，复合辐射超过轫致辐射,
+        当波长大于$\sim\frac{30}{T/10^6\text{K}}\text{\AA}$时，轫致辐射大于复合辐射.
+        对任意给定频率, 温度升高时, 比值$\frac{j_\text{复合}(\nu)}{j_\text{轫致}(\nu)}$减少.
+        温度超过$10^7\text{K}$时, 除在边界频率$h\nu=I_{Z,z-1,n}$ ($I_{Z,z-1,n}$为原子序数$Z$的, 净电荷为$(z-1)e$的离子在能级$n$的电离能)处之外,
+        复合辐射在所有波长处都不重要.
+    }
+    \item 何为复合线? 何为Balmer线系? 试写出至少两条Balmer线的波长.\da{
+        复合到激发态后随即发生的向低能级的级联跃迁过程中产生的谱线. 向$n=2$能级发生的级联跃迁过程产生氢的Balmer线系. $6562.1\text{\AA}$, $4860.7\text{\AA}$, $4340.1\text{\AA}$, $4101.2\text{\AA}$\dots
+    }
+    \item 何为复合--级联方程? 它常被用来确定何种物理参数?\da{
+        确定各能级原子数的方程. 每条谱线的发射系数及各条谱线的相对强度.
+    }
+    \item 何为射电复合谱线? 利用射电观测得到的射电复合谱线的哪些参量可确定等离子体电子温度?\da{
+        高激发态之间的复合--级联跃迁产生的射电谱线. 谱线宽度(FWHM)及分立谱--连续谱亮温度比(实测的是``天线温度''比).
+    }
+    \item 双电子复合在什么情况下变得比复合辐射更重要?\da{
+        双电子复合(入射到离子上的外来电子使
+        离子发生碰撞激发, 同时此损失了动能的电子被俘获到该离
+        子的另一激发态)过程在$kT\gtrsim0.3\Delta W_\text{离子激发}$时将超过
+        复合辐射过程.
+    }
+    \item 何为光电吸收? (类氢离子)在频率大于能级$n$的光致电离的阈值频率时, 光电吸收的截面与频率有何种关系?\da{
+        束缚--自由吸收. \begin{equation}
+            \frac{\Delta \sigma_\text{bf}}{\Delta n}=\frac{32\pi^2e^6R_\infty Z^4}{3\sqrt{3}h^3\nu^3n^5}g_\text{bf}(\nu,T),\quad n\ge \frac{Z^2}{h}E_n.
+        \end{equation}
+    }
+    \item 产生原子发射线的主要机制有哪几种? 试列举出哪些谱线是有哪种机制产生的?\da{
+        复合--级联过程, 碰撞激发(当等离子体中的自由电子和原子(或离子)碰撞
+        时, 引起原子的激发). 同一星云/AGN同时观测到明亮的允许线(如
+        H${}_\alpha$, H${}_\beta$等)和明亮的禁线(如O III的4959, 5007双线), 前者复合--级联过程, 后者碰撞激发.
+    }
+    \item 何为碰撞激发? 自由电子在等离子体中主要起哪三种作用?\da{
+        当等离子体中的自由电子和原子(或离子)碰撞
+        时, 引起原子的激发. \begin{enumerate}
+            \item 自由电子间频繁碰撞导致电子气的平衡态速度分布
+            (Maxwell分布)建立, 温度约$10000\,\text{K}$;
+            \item 自由电子和离子相遇, 产生轫致辐射和复合辐射;
+            \item 自由电子和离子的非弹性碰撞, 引起离子(或原子)的激
+            发, 产生辐射---电子碰撞激发.
+        \end{enumerate}
+    }
+    \item H和O元素丰度相差三个量级, 但发射线强度却相近, 是何原因?\da{
+        复合截面很小($\frac{\Delta \sigma_\text{R}}{\Delta n}\sim10^{-20}\text{cm}^2$)，比碰撞激发截面小近三个量级.
+    }
+    \item 何为选择定则? H原子的主要(偶极近似下的)选择定则是什么?\da{
+        对给定原子, 从一切跃迁中选出真有可能实现的跃迁的法则称为选择定则. $\Delta l=\pm1$, $\Delta m=0,\pm1$.
+    }
+    \item 是否所有满足偶极辐射选择定则的允许跃迁都有相同的跃迁概率? 光谱学中经常用什么量来代替跃迁概率?\da{
+        非. 振子强度.
+    }
+    \item 写出比偶极辐射更精确的跃迁概率公式? 当偶极矩辐射为零时是否还会发生能级跃迁?\da{
+        电偶极\begin{equation}
+            A_\text{if}=\frac{4\omega_\text{fi}^3}{3\hbar c^3}\left\lvert\vec{D}_\text{fi}\right\rvert ^2=A_\text{if}=\frac{4\omega_\text{fi}^3}{3\hbar c^3}\left\lvert e\vec{r}_\text{fi}\right\rvert ^2,
+        \end{equation}
+        磁偶极\begin{equation}
+            A_\text{if}^{\text{M}}=\frac{4\omega_\text{fi}^3}{3\hbar c^3}\left\lvert\vec{M}_\text{fi}\right\rvert ^2=\frac{4\omega_\text{fi}^3}{3\hbar c^3}\left\lvert \frac{e}{2m_ec^2}\left(\vec{L}_\text{fi}+2\vec{S}_\text{fi}\right)\right\rvert ^2,
+        \end{equation}
+        电四极\begin{equation}
+            A_\text{if}^{\text{Q}}=\frac{\omega_\text{fi}^5}{10\hbar c^5}\left\lvert\vec{\vec{\mathcal{D} }}  _\text{fi}\right\rvert ^2=\frac{\omega_\text{fi}^5}{10\hbar c^5}\left\lvert e\left(\vec{r}_\text{fi}\vec{r}_\text{fi}-\frac{1}{3}{r}_\text{fi}{r}_\text{fi}\vec{\vec{I}}\right)\right\rvert ^2,
+        \end{equation}
+        可.
+    }
+    \item 何为禁戒跃迁和禁线? 产生禁戒跃迁的主要原因是什么? 天体物理中常见的禁线有哪些(写出禁线的波长)?\da{
+        凡破坏了偶极矩辐射的选择定则的跃迁称为禁戒跃迁, 这种跃迁产生的谱线称为禁线.
+        电四极矩和磁偶级矩跃迁的作用.
+        \begin{enumerate}
+            \item $\text{}$[O III]的绿光双线, 5007\AA{}和4959\AA{} (靠近H${}_\beta$: 4861\AA);
+            \item $\text{}$[N II]的红光双线, 6548\AA{}和6583\AA{} (靠近H${}_\alpha$: 6563\AA);
+            \item $\text{}$[S II]的红光双线, 6716\AA{}和6731\AA{} (很难分辨);
+            \item $\text{}$[O II]的紫光双线, 3726\AA{}和3729\AA{} (不可分辨);
+            \item $\text{}$[H I]的21cm射电谱线.
+        \end{enumerate}
+    }
+    \item 写出碰撞激发截面的量级近似表示式. 碰撞激发截面是否大于轫致辐射截面和复合辐射截面? 什么情况下碰撞激发机制变得不重要?\da{
+        $\sigma\sim4\pi a_\text{Bohr}^2\left(\frac{E_1}{E_e}\right)\left(  \frac{E_1}{\Delta E_e}\right)$. 密度很低, $T\lesssim10^7\,\text{K}$, 远大于轫致辐射截面和复合辐射截面. 除非$T\lesssim3\times10^4\,\text{K}$.
+    }
+    \item (对光学薄辐射源)由哪些离子的禁线强度比可确定电子温度(及理由)? 由哪些离子的禁线强度比可确定电子密度(及理由)?\da{
+        能级相差大的, 强度比对电子温度敏感. 能级相差小的, 强度比对电子密度敏感.
+    }
+    \item 如果观测到的[OII]或[SII]双禁线的强度比接近1.5, 说明什么? 若强度比大致为0.3, 则说明什么?\da{
+        电子密度小. 电子密度大.
+    }
+\end{enumerate}

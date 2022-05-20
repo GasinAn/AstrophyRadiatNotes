@@ -24,6 +24,12 @@
 }
 \def\b{\boldsymbol}
 \def\d{\mathrm{d}}
+\makeatletter
+\def\@begintheorem#1#2{\trivlist
+\item[\hskip \labelsep{\bfseries #1\ }]\itshape}
+\makeatother
+\newtheorem{answer}{答}
+\newcommand{\da}[1]{\begin{answer}\emph{$\!\!\!$#1}\end{answer}}
 \title{天体物理辐射机制笔记}
 \author{GasinAn}
 \begin{document}
@@ -37,4 +43,5 @@
     \include{同步辐射(week7).tex}
     \include{逆Compton散射(week11).tex}
     \include{等离子体效应(week12).tex}
+    \include{复合辐射与复合线(参考自学)(week13).tex}
 \end{document}
