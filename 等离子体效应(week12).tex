@@ -84,3 +84,14 @@
 \subsection{Razin效应}
 
 $k=1-n_\text{r}\beta\cos\theta$, 得辐射锥角$\theta=(1-n_\text{r}^2\beta^2)^{1/2}$. 若$n_\text{r}\ll1$, $\beta\simeq1$, $\theta\simeq(1-n_\text{r}^2)^{1/2}=\frac{\omega_p}{\omega}$, 若$\omega\lesssim\gamma\omega_p$, 则无$\theta\simeq1/\gamma$, 所以截止频率$\gamma\omega_p$非$\omega_p$.
+
+\section{考虑介质折射的辐射转移方程}
+
+$\frac{I_\nu}{n_\nu^2}=\text{const}$. $\frac{\partial I_\nu}{\partial s}:=\frac{2I_\nu}{n_\nu}\frac{\d n_\nu}{\d s}$,
+\begin{equation}
+    \frac{\d I_\nu}{\d s}=\frac{\partial I_\nu}{\partial s}-\alpha_\nu I_\nu+j_\nu.
+\end{equation}
+$S_\nu:=\frac{1}{n_\nu^2}\frac{j_\nu}{\alpha_\nu}$,
+\begin{equation}
+    \frac{\d }{\d \tau}\left(\frac{I_\nu}{n_\nu^2}\right)=-\frac{I_\nu}{n_\nu^2}+S_\nu.
+\end{equation}
