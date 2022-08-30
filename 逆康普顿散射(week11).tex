@@ -16,7 +16,9 @@ Thomson散射: 电子被电磁波强迫振动.
 \begin{equation}
     \sigma=\frac{8\pi}{3}\left(\frac{e^2}{m_ec^2}\right)^2=\frac{8}{3}\pi r_e^2
 \end{equation}
-对无偏振入射也恰好成立, 无偏振入射散射后会偏振.
+对无偏振入射也恰好成立.
+
+线偏振散射后$\b{E}$在入射$\b{E}$和出射$\b{n}$面内且垂直于$\b{n}$.
 
 \section{Compton散射}
 
@@ -30,4 +32,19 @@ Thomson散射: 电子被电磁波强迫振动.
 
 电子系中有Compton散射(或Thomson散射), 然后转换参考系, 结果是光子能量变$\gamma^2$倍, 且电子总认为光子从正面来, 产生各向同性散射, 但观者认为光子沿电子运动方向射出.
 
-各向同性单色光辐射谱: 计$x=\frac{\nu}{4\gamma^2\nu_\text{入}}$, 峰值$x\simeq0.61$,截止$x=1$, 低频$P(\nu)\propto\nu$ 
+单电子, 各向同性光子,
+\begin{equation}
+    P(\nu)=8\pi r_e^2hc\int f(x(\nu,\gamma,\nu_\text{入}))n_\text{ph}(\nu_\text{入})\d\nu_\text{入},
+\end{equation}
+$x:=\nu/4\gamma^2\nu_\text{入}$, $0<x<1$, $f$峰$x=0.61$, 低频$\propto\nu$.
+
+电子系$N(\gamma)$, 
+\begin{equation}
+    j(\nu)=8\pi r_e^2hc\iint N(\gamma)f(x(\nu,\gamma,\nu_\text{入}))n_\text{ph}(\nu_\text{入})\,\d\nu_\text{入}\d\gamma.
+\end{equation}
+
+电子系$N(\gamma)\propto\gamma^{-n}$, $\gamma_1<\gamma<\gamma_2$, $\nu\gg\nu_\text{入}$\footnote{$x>1\to\nu>4\pi\gamma_{1}^2\nu_\text{入}$.}, $x=1\to\gamma_\text{min}\gg\gamma_1$, $\gamma_2=\infty$, $j(\nu)\propto\nu^{-(n-1)/2}$, 同同步辐射.
+
+光子$n_\text{ph}(\nu_\text{入})\propto\nu_\text{入}^{-p}$, $\nu_\text{入1}<\nu_\text{入}<\nu_\text{入2}$, $\nu>4\gamma^2\nu_\text{入1}$, $\nu_\text{入2}=\infty$, $j(\nu)\propto\nu^{-(p-1)}$. 注意$j(\nu_\text{入})\propto\nu_\text{入}^{-(p-1)}$.
+
+电子光子都幂律, 分情况.
