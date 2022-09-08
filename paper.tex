@@ -1,0 +1,129 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
+\usepackage{hyperref}
+\usepackage{marginnote}
+\usepackage{mathrsfs}
+\usepackage{syntonly}
+\usepackage{textcomp}
+\usepackage{ulem}
+\usepackage{verbatim}
+%\syntaxonly
+%\geometry{a5paper}
+\hyphenation{}
+\normalem
+\hypersetup{
+    colorlinks,
+    linkcolor=blue,
+    filecolor=pink,
+    urlcolor=cyan,
+    citecolor=red,
+}
+\def\b{\boldsymbol}
+\def\d{\mathrm{d}}
+\def\p{\partial}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\atanxy}{atan2}
+\theoremstyle{definition}
+\newtheorem{definition}{定义}
+\newtheorem{proposition}{命题}
+\newtheorem{answer}{答}
+\newcommand{\da}[1]{\begin{answer}\emph{$\!\!\!$#1}\end{answer}}
+\title{}
+\author{}
+\begin{document}
+\small
+\pagestyle{empty}
+$\mu_0:=4\pi\times10^{-7}\text{N}/\text{A}^2$. 令$\epsilon_0=\mu_0=1$,
+$\epsilon_\text{Gauss}:=\frac{\epsilon}{\epsilon_0}$,
+$\mu_\text{Gauss}:=\frac{\mu}{\mu_0}$,
+令库伦定律中比例系数为1, 得$q$单位$\text{cm}^{3/2}\text{g}^{1/2}\text{s}^{-1}$,
+$q_\text{Gauss}:=\frac{q}{\sqrt{4\pi\epsilon_0}}$,
+令$\b{B}$单位和$\b{E}$单位相同,
+$\b{B}_\text{Gauss}:=c\b{B}$.
+辐射强度$I_\lambda$: 垂直于单位面积方向的单位立体角内单位时间通过的单位波长的能量. 对于黑体, $I_\lambda=B_\lambda$.
+平均强度$\left\langle I_\lambda\right\rangle $: 辐射强度对立体角求平均.$\left\langle I_\lambda\right\rangle = \frac{\int I_\lambda \,\mathrm{d}\Omega}{\int \,\mathrm{d}\Omega}=\frac{\int I_\lambda \,\mathrm{d}\Omega}{4\pi}$.
+对于黑体, $\left\langle I_\lambda\right\rangle=I_\lambda=B_\lambda$.
+比能量密度$u_\lambda$: 首先假设只有一个方向的辐射强度, 取个垂直于这个方向的小面$\Delta A$, 在$\Delta t$时间内通过能量$I_\lambda \Delta A \Delta t$, 这些能量充斥了$\Delta A (c \Delta t)$的体积, 所以有$I_\lambda \Delta A \Delta t = u_\lambda \Delta A (c \Delta t)$, $u_\lambda = I_\lambda/c$. 可以证明任何小体元$V$内都有$\int_V u_\lambda = \int_V I_\lambda/c$. 现在辐射强度在任意方向都有, 所以要对立体角求和, 故有$u_\lambda = \int I_\lambda/c\,\mathrm{d}\Omega = 4\pi\left\langle I_\lambda\right\rangle/c$
+对于黑体, $u=(4\sigma/c)\,T^4:=aT^4$.
+辐射流量/辐射能流$F_\lambda$: 把垂直于面元的辐射分量$I_\lambda\cos\theta$对立体角求和, 得到垂直于单位面积方向单位时间通过的单位波长的总能量, 即$F_\lambda = \int I_\lambda \cos\theta \,\mathrm{d}\Omega.$
+对于黑体, 只计算$\theta\le\pi/2$的部分, 可得$F=\sigma T^4=\pi \left\langle I_\lambda\right\rangle$.
+辐射压强$P_\lambda$: 反射情形下, $P_\lambda$要用辐射到板上的动量的法向分量的2倍来算. 首先, 由能量得到动量, 要除以$c$. 其次, $\theta$方向的辐射不垂直于板, $\Delta A$的实际有效面积只有$\Delta A \cos\theta$, 所以要乘以$\cos\theta$. 最后, 动量只取法向分量, 要再乘以$\cos\theta$. 只$\theta\le\pi/2$的部分有贡献, 所以有$P_\lambda = 2\int_{\theta\le\pi/2} I_\lambda\cos^2\theta/c \,\mathrm{d}\Omega$.
+对于透射情形, $P_\lambda$是面元$\theta<\pi/2$ 部分单位时间的动量改变量.首先$\theta<\pi/2$ 部分无论是吃光子还是吐光子, 动量改变都是一份, 所以不需要2倍的因子. 其次既要考虑进入$\theta<\pi/2$部分的光子(运动方向$\theta<\pi/2$)的动量也要考虑离开$\theta<\pi/2$部分的光子(运动方向$\theta>\pi/2$)的动量. 所以有$P_\lambda = \int I_\lambda\cos^2\theta/c \,\mathrm{d}\Omega.$
+对于黑体, $P=(1/3)\,u$.
+对面源, 测得的是$I_\lambda$, 不随距离变化.
+对点源, 测得的是$F_\lambda$, 和距离呈平方反比.
+黑体低频$\propto \nu^2$, 高频指数.
+$g_1B_{12}=g_2B_{21}$,$A_{21}=(2h\nu^3/c^2)B_{21}$.
+$1/N=\alpha/(\alpha+\sigma)$,$l_*=\sqrt{N}l$,$l=1/(\alpha+\sigma)$.
+椭圆偏振$\b{E}_1(t)=E_1\b{e}_x\cos(\omega t-\varphi_1)$,$\b{E}_2(t)=E_2\b{e}_y\cos(\omega t-\varphi_2)$,$I=E_1^2+E_2^2$,
+$Q=E_1^2-E_2^2$,
+$U=2E_1E_2\cos(\varphi_2-\varphi_1)$,
+$V=2E_1E_2\sin(\varphi_2-\varphi_1)$.
+$U/Q=\tan2\chi$,$V/\sqrt{Q^2+U^2+V^2}=\sin2\beta$.椭圆偏振三独立.$\beta>0$顺时针右旋,$\beta<0$逆时针左旋.
+轫致,热平衡, Maxwell分布, $\epsilon_\text{ff}(\nu)\propto Z^2n_en_iT^{-1/2}e^{-h\nu/kT}\bar{g}_\text{ff}(\nu)$,
+$h\nu/kT\ll1$, 平谱, $h\nu/kT\gtrsim1$, 截断.低频$\alpha(\nu)\propto \nu^{-2}T^{-3/2}$大, 光学厚, 黑体谱(分界$\tau=1$). $T\uparrow$, 谱矮胖, 总面积大.
+同步,$\omega_c:=\frac{3}{2}\gamma^2\omega_L\sin\alpha$, 最大值$\omega\approx0.29\omega_c$, 低频$\propto\omega^{1/3}$, 高频指数.电子系$s:=(p-1)/2$.
+自吸收$\alpha(\omega)\propto\omega^{-(p+4)/2}$, $S(\omega)=\frac{j(\omega)}{\alpha(\omega)}=\frac{P_\text{tot}(\omega)}{4\pi}\alpha(\omega)\propto\omega^{5/2}$. 低频$\alpha$大, 光学厚, $I(\omega)\approx S(\omega)\propto\omega^{5/2}$, 高频$I(\omega)\propto\omega^{-s}$, 分界点$\tau(\omega)=1$.曲率单粒子谱型一样. $\omega_0\simeq\frac{c}{\rho}$ ,$\omega_c\propto\gamma^3$, 低频端$P(\omega)\propto\omega^{1/3}$与$\gamma$无关, $P_\text{tot}(\omega)\propto P(\omega)\propto\omega^{1/3}$.
+逆Compton散射,电子系中有Compton散射,转换参考系, 光子能量变$\gamma^2$倍, 电子总认为光子从正面来, 产生各向同性散射, 观者认为光子沿电子运动方向射出.
+单电子, 各向同性光子,    $P(\nu)=8\pi r_e^2hc\int f(x(\nu,\gamma,\nu_\text{入}))n_\text{ph}(\nu_\text{入})\d\nu_\text{入}$,
+$x:=\nu/4\gamma^2\nu_\text{入}$, $0<x<1$, $f$峰$x=0.61$, 低频$\propto\nu$.
+电子系$N(\gamma)$,$j(\nu)=8\pi r_e^2hc\iint N(\gamma)f(x(\nu,\gamma,\nu_\text{入}))n_\text{ph}(\nu_\text{入})\,\d\nu_\text{入}\d\gamma$.
+电子系$N(\gamma)\propto\gamma^{-n}$, $\gamma_1<\gamma<\gamma_2$, $\nu\gg\nu_\text{入}$($x>1\to\nu>4\pi\gamma_{1}^2\nu_\text{入}$)., $x=1\to\gamma_\text{min}\gg\gamma_1$, $\gamma_2=\infty$, $j(\nu)\propto\nu^{-(n-1)/2}$, 同同步辐射.
+光子$n_\text{ph}(\nu_\text{入})\propto\nu_\text{入}^{-p}$, $\nu_\text{入1}<\nu_\text{入}<\nu_\text{入2}$, $\nu>4\gamma^2\nu_\text{入1}$, $\nu_\text{入2}=\infty$, $j(\nu)\propto\nu^{-(p-1)}$. $j(\nu_\text{入})\propto\nu_\text{入}^{-(p-1)}$.
+电子光子都幂律, 分情况.
+无外磁场, 各向同性.
+冷等离子体: 只考虑辐射在等离子体中的传播, 忽略等离子体的辐射和吸收.
+$c^2k^2=\epsilon\omega^2=\omega^2-\omega_p^2$
+若$\omega<\omega_p$, $k$为虚数, $\b{E}=E\exp[-i(\omega t-\b{k}\cdot\b{r})]\b{e}$变成指数衰减, 所以$\omega_p$为截止频率.
+若$\omega>\omega_p$, 相速度
+$v_\text{ph}=\frac{\omega}{k}=\frac{c}{\sqrt{\epsilon}}=\frac{c}{\sqrt{1-\left(\frac{\omega_p}{\omega}\right)}}:=\frac{c}{n_\text{r}}>c$
+群速度$v_\text{g}=\frac{\partial\omega}{\partial k}=c\sqrt{1-\left(\frac{\omega_p}{\omega}\right)}<c$.
+脉冲星脉冲到达时间为$t(\omega)$, $\omega_\text{p}$小, $\omega\gg\omega_\text{p}$, 可求$\d t/\d\omega$.大磁场$\b{B}_0$. 设沿$\b{B}_0$方向入射, $\b{E}=Ee^{-i\omega t}(\b{e}_1\mp i\b{e}_2)$, $\b{B}_0=B_0\b{e}_3$,
+$\omega_B:=\frac{eB_0}{m_ec}$,$\epsilon_\text{R,L}:=1-\frac{\omega_p^2}{\omega(\omega\pm\omega_B)}$,
+$v_\text{ph}=\frac{c}{\epsilon_\text{R,L}}$,
+群速度$v_\text{g}=\frac{\partial\omega}{\partial k}$.
+Cherenkov辐射,$c\to c/\sqrt{\epsilon}$, $e\to e/\sqrt{\epsilon}$, $\b{E}\to \sqrt{\epsilon}\b{E}$, $\b{B}\to \b{B}$, $\phi\to \sqrt{\epsilon}\phi$, $\b{A}\to \b{A}$, 出现$n_\text{r}:=\sqrt{\epsilon}$, 若$n_\text{r}>1$, 则$K$可等于$0$, $\b{A}$可等于$\infty$, ``固有场''可能无穷远积分不为$0$, 匀速在锥上可有辐射.
+Razin效应,
+$k=1-n_\text{r}\beta\cos\theta$, 锥角$\theta=(1-n_\text{r}^2\beta^2)^{1/2}$. 若$n_\text{r}\ll1$, $\beta\simeq1$, $\theta\simeq(1-n_\text{r}^2)^{1/2}=\frac{\omega_p}{\omega}$, 若$\omega\lesssim\gamma\omega_p$, 无$\theta\simeq1/\gamma$, 截止频率$\gamma\omega_p$非$\omega_p$.
+$\frac{I_\nu}{n_\nu^2}=\text{const}$. $\frac{\partial I_\nu}{\partial s}:=\frac{2I_\nu}{n_\nu}\frac{\d n_\nu}{\d s}$,$\frac{\d I_\nu}{\d s}=\frac{\partial I_\nu}{\partial s}-\alpha_\nu I_\nu+j_\nu$,
+$S_\nu:=\frac{1}{n_\nu^2}\frac{j_\nu}{\alpha_\nu}$,
+$\frac{\d }{\d \tau}\left(\frac{I_\nu}{n_\nu^2}\right)=-\frac{I_\nu}{n_\nu^2}+S_\nu$.
+复合辐射? 轫致辐射异同? $10000\,\text{K}$哪种波段?复合过程产生的辐射. 自由--束缚而非自由--自由. 光学(轫致射电).
+氢离子复合辐射截面主量子数$n$关系?$10000\,\text{K}$截面量级?比氢原子几何截面?$\frac{\Delta \sigma_\text{R}}{\Delta n}
+=\left(\frac{32\pi}{3\sqrt{3}}\right)Z^2\alpha_\text{EM}^3\left(\frac{\lambda_e}{2\pi}\right)^2\left(\frac{Z^2E_1}{h\nu_\text{出}}\right)\frac{g_\text{R}(n)}{n^3}$, 大$n$, $\frac{\Delta \sigma_\text{R}}{\Delta n}\propto n^{-3}$, 小$n$, $h\nu\simeq\frac{Z^2E_1}{n^2}$, $\frac{\Delta \sigma_\text{R}}{\Delta n}\propto n^{-1}$, 临界值$kT\simeq E_\text{初}\simeq\frac{Z^2E_1}{n_\text{max}^2}$. $\frac{\Delta \sigma_\text{R}}{\Delta n}\sim10^{-20}\text{cm}^2$. $5\!\times\!10^3\text{--}2\!\times\!10^4\,\text{K}$ 远小于氢原子截面($\sim10^{-15}\text{cm}^2$).
+复合速率系数($\alpha$)?低温和高温近似系数温度关系?$-\frac{\d N_e}{\d t}=-\frac{\d N_Z}{\d t}:=\alpha N_eN_Z$设电子有Maxwell分布$f(v)$, $\alpha(T)=\sum_n\int\sigma_\text{R}(n)vf(v)\,\d v:=\sum_n\alpha_n(T)$低温$\alpha(T)\propto T^{-1/2}$, 高温$\alpha(T)\propto T^{-3/2}$.
+$\frac{j_\text{复合}(\nu)}{j_\text{轫致}(\nu)}\simeq10^{-1}\frac{X(\nu,T)}{T/10^6\text{K}}$, $X$值随频率$\nu$值增大增加, 复合连续谱高频端可能超过轫致,低频端轫致占优势.
+波长小于$\sim\frac{30}{T/10^6\text{K}}\text{\AA}$复合大,
+波长大于$\sim\frac{30}{T/10^6\text{K}}\text{\AA}$轫致大.
+任意给定频率, 温度升高, 比值$\frac{j_\text{复合}(\nu)}{j_\text{轫致}(\nu)}$减少.
+温度超过$10^7\text{K}$, 除边界频率$h\nu=I_{Z,z-1,n}$ ($I_{Z,z-1,n}$为序数$Z$的, 净电荷为$(z-1)e$的离子在能级$n$的电离能)处之外,
+复合在所有波长处不重要.
+复合到激发态后随即发生的向低能级的级联跃迁过程中产生的谱线.$6562.1\text{\AA}$, $4860.7\text{\AA}$, $4340.1\text{\AA}$, $4101.2\text{\AA}$.复合--级联方程? 常被用来确定何物理参数?确定各能级原子数的方程. 每条谱线的发射系数及各条谱线的相对强度.射电复合谱线? 利用射电观测得到的谱线的哪些参量可确定等离子体电子温度?高激发态之间的复合--级联跃迁产生的射电谱线. 谱线宽度(FWHM)及分立谱--连续谱亮温度比(实测的是``天线温度''比).双电子复合(入射到离子上的外来电子使
+离子发生碰撞激发, 同时此损失了动能的电子被俘获到该离
+子的另一激发态)过程在$kT\gtrsim0.3\Delta W_\text{离子激发}$时超过
+复合过程.光电吸收? (类氢离子)在频率大于能级$n$的光致电离的阈值频率时, 光电吸收截面与频率关系?束缚--自由吸收. $\frac{\Delta \sigma_\text{bf}}{\Delta n}=\frac{32\pi^2e^6R_\infty Z^4}{3\sqrt{3}h^3\nu^3n^5}g_\text{bf}(\nu,T),\quad n\ge \frac{Z^2}{h}E_n$.原子发射线机制? 哪些谱线哪种机制产生的?
+复合--级联过程, 碰撞激发(当等离子体中的自由电子和原子(或离子)碰撞
+时, 引起原子的激发). 同一星云/AGN同时观测到明亮的允许线(如
+H${}_\alpha$, H${}_\beta$等)和明亮的禁线(如O III的4959, 5007双线), 前者复合--级联过程, 后者碰撞激发.碰撞激发? 哪三种作用?
+当等离子体中的自由电子和原子(或离子)碰撞
+时, 引起原子的激发. 自由电子间频繁碰撞导致电子气的平衡态速度分布
+(Maxwell分布)建立, 温度约$10000\,\text{K}$;
+自由电子和离子相遇, 产生轫致辐射和复合辐射;
+自由电子和离子的非弹性碰撞, 引起离子(或原子)的激
+发, 产生辐射---电子碰撞激发.H和O元素丰度差三量级, 发射线强度相近原因?
+复合截面很小($\frac{\Delta \sigma_\text{R}}{\Delta n}\sim10^{-20}\text{cm}^2$),比碰撞激发截面小近三个量级.选择定则? H原子的主要(偶极近似下的)选择定则是什么?对给定原子, 从一切跃迁中选出真有可能实现的跃迁的法则称为选择定则. $\Delta l=\pm1$, $\Delta m=0,\pm1$.所有满足偶极辐射选择定则的允许跃迁有相同概率? 光谱学中常用代替跃迁概率?非. 振子强度.
+禁戒跃迁和禁线? 主要原因? 常见禁线?凡破坏了偶极矩辐射的选择定则的跃迁称为禁戒跃迁, 这种跃迁产生的谱线称为禁线.
+电四极矩和磁偶级矩跃迁的作用.
+$\text{}$[O III]的绿光双线, 5007\AA{}和4959\AA{} (靠近H${}_\beta$: 4861\AA);
+$\text{}$[N II]的红光双线, 6548\AA{}和6583\AA{} (靠近H${}_\alpha$: 6563\AA);
+$\text{}$[S II]的红光双线, 6716\AA{}和6731\AA{} (很难分辨);
+$\text{}$[O II]的紫光双线, 3726\AA{}和3729\AA{} (不可分辨);
+$\text{}$[H I]的21cm射电谱线.
+碰撞激发截面量级近似式?碰撞激发截面大于轫致和复合?什么情况下碰撞不重要?$\sigma\sim4\pi a_\text{Bohr}^2\left(\frac{E_1}{E_e}\right)\left(  \frac{E_1}{\Delta E_e}\right)$. 密度很低, $T\lesssim10^7\,\text{K}$, 远大于轫致辐射截面和复合辐射截面. 除非$T\lesssim3\times10^4\,\text{K}$.(对光学薄辐射源)由哪些离子的禁线强度比可确定电子温度(及理由)? 由哪些离子的禁线强度比可确定电子密度(及理由)?能级相差大的, 强度比对电子温度敏感. 能级相差小的, 强度比对电子密度敏感.观测到的[OII]或[SII]双禁线的强度比接近1.5, 说明什么? 若强度比大致为0.3, 则说明什么?电子密度小. 电子密度大.
+\end{document}
